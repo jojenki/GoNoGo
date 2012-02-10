@@ -1,0 +1,8 @@
+Description:
+This is a very basic Go/No Go game that measures a user's response time by showing a series of similar objects and a single distinc object. The objective is to touch the screen whenever one of the similar object appears and not when the distinct object appears.
+
+Building:
+This is an Android project that I created through Eclipse, so there is no Ant build file. Feel free to create one and submit it, and I will most likely take it. Until then, the easiest way to build it is to Import an existing Android project in Eclipse and point it to this folder.
+
+License:
+Do what you will with it. 
