@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+	<TextView
+		android:text="How to play"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:textStyle="bold"/>
+	<TextView
+		android:text="@string/instructions"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"/>
+	<TextView
+		android:text="How to hold"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" android:textStyle="bold" android:layout_marginTop="40sp"/>
+	<TextView
+		android:text="@string/how_to_hold"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"/>
+</LinearLayout>
