@@ -69,9 +69,9 @@ public class Game extends Activity implements OnClickListener
 	
 	// Visibility constants.
 	private static final long FIRST_DELAY = 2000;
-	private static final long VISIBLE_MILLIS = 250;
-	private static final long[] DELAYS_MILLIS = {1000, 2000};
-	public static final int NUM_ITEMS_PER_ROUND = 60;
+	private static final long VISIBLE_MILLIS = 500;
+	private static final long[] DELAYS_MILLIS = { 1000, 2000 };
+	public static final int NUM_ITEMS_PER_ROUND = 30;
 	
 	// The frequency at which a bad image/character will be shown.
 	private static final float BAD_FREQUENCY = 0.1f;
@@ -91,7 +91,7 @@ public class Game extends Activity implements OnClickListener
 	public static final String REPORT_FEEDBACK = "feedback";
 	
 	// A dummy, empty image.
-	private static final Bitmap EMPTY_IMAGE = BitmapFactory.decodeByteArray(new byte[0], 0, 0);
+	private Bitmap emptyImage;
 	
 	// The bad character/image.
 	private static final char BAD_CHAR = 'X';
@@ -196,28 +196,44 @@ public class Game extends Activity implements OnClickListener
 			switcher.sendMessageAtTime(switcher.obtainMessage(NEW_CHAR_MESSAGE), SystemClock.uptimeMillis() + FIRST_DELAY);
 		}
 		else if(tGameType.toLowerCase().equals(GameType.IMAGE.name().toLowerCase())) {
+			layout.setBackgroundColor(android.graphics.Color.WHITE);
+			emptyImage = BitmapFactory.decodeResource(getResources(), R.drawable.hole);
+
 			imageView = new ImageView(this);
 			imageView.setScaleType(ScaleType.FIT_CENTER);
-			imageView.setBackgroundColor(android.graphics.Color.WHITE);
+			imageView.setBackgroundColor(android.graphics.Color.TRANSPARENT);
 			imageView.setOnClickListener(this);
-			
-			layout.setBackgroundColor(android.graphics.Color.WHITE);
+			imageView.setImageBitmap(emptyImage);
 			layout.addView(imageView, new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
 			
-			imageReferences = new Bitmap[4];
-			imageReferences[0] = BitmapFactory.decodeResource(getResources(), R.drawable.mole1);
-			imageReferences[1] = BitmapFactory.decodeResource(getResources(), R.drawable.mole2);
-			imageReferences[2] = BitmapFactory.decodeResource(getResources(), R.drawable.mole3);
-			imageReferences[3] = BitmapFactory.decodeResource(getResources(), R.drawable.mole4);
+			imageReferences = new Bitmap[11];
+			imageReferences[0] = BitmapFactory.decodeResource(getResources(), R.drawable.bighair);
+			imageReferences[1] = BitmapFactory.decodeResource(getResources(), R.drawable.blonde);
+			imageReferences[2] = BitmapFactory.decodeResource(getResources(), R.drawable.brunette);
+			imageReferences[3] = BitmapFactory.decodeResource(getResources(), R.drawable.cowboy);
+			imageReferences[4] = BitmapFactory.decodeResource(getResources(), R.drawable.eyeball);
+			imageReferences[5] = BitmapFactory.decodeResource(getResources(), R.drawable.fez);
+			imageReferences[6] = BitmapFactory.decodeResource(getResources(), R.drawable.french);
+			imageReferences[7] = BitmapFactory.decodeResource(getResources(), R.drawable.hair);
+			imageReferences[8] = BitmapFactory.decodeResource(getResources(), R.drawable.hawaiin);
+			imageReferences[9] = BitmapFactory.decodeResource(getResources(), R.drawable.sombraro);
+			imageReferences[10] = BitmapFactory.decodeResource(getResources(), R.drawable.space);
 			
-			badImage = BitmapFactory.decodeResource(getResources(), R.drawable.flower);
+			badImage = BitmapFactory.decodeResource(getResources(), R.drawable.aubergine);
 			
 			imageLookup = new HashMap<Bitmap, String>();
-			imageLookup.put(imageReferences[0], "mole1");
-			imageLookup.put(imageReferences[1], "mole2");
-			imageLookup.put(imageReferences[2], "mole3");
-			imageLookup.put(imageReferences[3], "mole4");
-			imageLookup.put(badImage, "flower");
+			imageLookup.put(imageReferences[0], "bighair");
+			imageLookup.put(imageReferences[1], "blonde");
+			imageLookup.put(imageReferences[2], "brunette");
+			imageLookup.put(imageReferences[3], "cowboy");
+			imageLookup.put(imageReferences[4], "eyeball");
+			imageLookup.put(imageReferences[5], "fez");
+			imageLookup.put(imageReferences[6], "french");
+			imageLookup.put(imageReferences[7], "hair");
+			imageLookup.put(imageReferences[8], "hawaiin");
+			imageLookup.put(imageReferences[9], "sombraro");
+			imageLookup.put(imageReferences[10], "space");
+			imageLookup.put(badImage, "aubergine");
 			
 			gameType = GameType.IMAGE;
 			
@@ -415,7 +431,7 @@ public class Game extends Activity implements OnClickListener
 	 */
 	private void clearImage()
 	{
-		imageView.setImageBitmap(EMPTY_IMAGE);
+		imageView.setImageBitmap(emptyImage);
 	}
 	
 	/**

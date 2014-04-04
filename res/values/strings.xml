@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Focus Game</string>
-<string name="instructions">During this task, letters will appear on the screen one at a time. Quickly tap the screen when you see any letter EXCEPT the letter X. Try as hard as you can not to tap the screen when you see the letter X. Try to respond as quickly as possible without error.</string>
-<string name="how_to_hold">Hold the device in the palm of your hand or set it on a flat service and hold it in place. With your other hand, hold one finger above the screen making sure not to cover the letter.</string>
+<string name="instructions">During this task, letters or images will appear on the screen one at a time. Quickly tap the screen when you see any letter EXCEPT the letter X or any mole image EXCEPT the eggplant image. Try as hard as you can not to tap the screen when you see the letter X or the eggplant image. Try to respond as quickly as possible without error.</string>
+<string name="how_to_hold">Hold the device in the palm of your hand or set it on a flat surface and hold it in place. With your other hand, hold one finger above the screen making sure not to cover the letter or image.</string>
 </resources>
